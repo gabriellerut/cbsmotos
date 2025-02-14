@@ -1,0 +1,597 @@
+@charset "UTF-8";
+
+/*Imports*/
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Sriracha&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/*Estilização Geral*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --fonte-titulo: "Roboto Condensed", sans-serif;
+    --fonte-frase:"Dancing Script", sans-serif;
+    --cor1: #fff;
+    --cor2: #dc3545;
+    --cor3: #000000;
+    --cor4: #007bff;
+    --cor5: #e83e8c;
+    --cor6: #a11d85dc;
+    --cor7: #182eaa;
+    --cor8: #fd7e14;
+    --cor9: #939598;
+}
+
+body, html {
+    min-height: 100vh;
+
+    background-color: var(--cor1);
+    font-family: Arial, Helvetica, sans-serif;
+    
+    scroll-behavior: smooth;/*Rolagem suave*/
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/*HEADER*/
+header {
+    width: 100%;
+    padding: 5px;
+
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+
+    background-color: var(--cor3);
+    color: var(--cor1);
+    
+    z-index: 10;
+
+    top: 0;
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-cbs {
+    height: 5vh;
+    margin: 5px;
+}
+
+.title-header {/*CBS MOTOS*/
+    font-family: var(--fonte-titulo);
+    font-size: 1.5em;
+}
+
+.text-header {/*Realizando Sonhos*/
+    font-family: var(--fonte-frase);
+    font-size: 1.2em;
+}
+
+:target {/*Deixa a barra da header fixa no topo da pagina*/
+    scroll-margin-top: .8em;
+}
+/*--------FIM DA ESTILIZAÇÃO DA HEADER-------*/
+
+/*MENU RESPOSIVO*/
+.menu {
+    padding: 5px;
+
+    display: flex;
+
+    gap: 15px; /*Espaçamento vertical dos botoes*/
+
+    list-style: none;
+
+    margin: 0; 
+    z-index: 2000;
+}
+
+.menu a {
+    color: var(--cor1);   
+
+    font-family: var(--fonte-titulo);
+    font-size: 1em;
+    font-weight: bolder;
+
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: var(--cor2);
+    transition-duration: .4s;
+}
+/*--------FIM DA ESTILIZAÇÃO DO MENU-------*/
+
+/*BOTÕES DE LOGIN E MENU*/
+.button-login {
+    padding: 5px;
+    margin: 10px;
+
+    font-family: var(--fonte-titulo);
+    text-transform: uppercase;
+
+    font-size: 1.2em;
+    font-weight: bolder;
+
+
+    background-color: var(--cor1);
+
+    border-radius: 60px;
+}
+
+.button-login:hover {
+    color: var(--cor2);
+    transition-duration: .4s;
+}
+
+.button-menu {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/*--------FIM DA ESTILIZAÇÃO DOS BOTÕES-------*/
+
+/*MEDIA QUERIES*/
+
+/*Responsividade do menu*/
+@media (max-width: 570px) {
+    body {
+        align-items: center;
+    }
+
+    .menu {
+        padding: 10px;
+        border-radius: 5px;
+
+        display: none; 
+        flex-direction: column;
+
+        position: absolute;
+
+        top: 65px;/*Altura do menu*/
+        right: -19px;/*Distancia vertical*/
+        transform: translate(-15%,-5%);/*Altura e Largura*/
+
+        background-color: var(--cor3);
+        color: var(--cor1); 
+    }
+
+    .menu.show {
+        display: flex; 
+    }
+
+    .button-menu {
+        display: block;
+    }
+    
+    .button-login {
+        display: inline-block;
+    }
+}
+
+/*Responsividade do carrossel*/
+@media (min-width: 850px) {/*Tela de tamanho minimo 850px*/
+    header {
+        position: relative;
+        justify-content: space-between;
+    }
+
+    .menu {
+       position: absolute;
+       left: 50%;
+       top: 50%;
+       transform: translate(-50%,-50%);
+    }
+
+    .suporte p, h1{
+        font-size: 1.1em;
+        line-height: 1.5em;
+    }
+}
+/*Responsividade Geral*/
+@media (max-width: 480px) {/*Tela tamanho maximo de 368px*/
+    header {
+      position: fixed;
+
+      width: 100%; 
+    }
+
+    .container-header {
+        font-size: 10px;
+    }
+  
+    .banner-main {
+      margin-top: 50px;
+    }
+
+    .carousel-container {
+        max-width: 100%;
+    }
+    .carousel-images img {
+        box-sizing: border-box;/*Manter a largura*/
+
+        margin-right: 5px;
+        margin-left: 5px;
+
+        min-width: 90%;
+    }
+
+    iframe {
+        width: 100%;
+        text-align: center;
+    }
+    .suporte h3 {
+        width: 100%;
+
+        font-size: 1.1em;
+        line-height: 1.2em;
+    }
+    .suporte p {
+        text-align: left;
+    }
+
+    footer img, p {
+        display: block;
+        text-align: center;
+    }
+
+    footer div {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+/*--------FIM DAS MEDIAS QUERIES-------*/
+
+/*BANNER PRINCIPAL*/
+.container-banner {
+    max-width: 100%;
+    height: auto;
+
+    display: block;
+    margin: 0;
+}
+
+.banner-main {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+/*--------FIM DO BANNER PRINCIPAL-------*/
+
+/*CARROUSEL*/
+
+.title-carrousel {
+    padding: 2px;
+    margin-bottom: 10px;
+
+    font-family: var(--fonte-titulo);
+    text-transform: uppercase;
+
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;       
+}
+
+.carousel-container {
+    position: relative;
+
+    overflow: hidden; /*Corta o que ultrapassar o carrousel*/
+
+    max-width: 100vw;
+    margin-top: 20px;
+    
+    z-index: 1; /*Não deixa o carrousel sobrepor no header fixado*/
+}
+
+.carousel-images {
+    display: flex;
+
+    width: 50%;
+    min-width: 350px;
+
+    box-sizing: border-box;
+
+    transition: transform 0.5s ease-in-out;/*Tipo e tempo da transição*/
+    
+    gap: 20px;/*Espaçamento das imagens*/
+    
+    cursor: pointer;
+
+}
+
+.carousel-images img {
+    width: 50%;
+    height: 25%;
+}
+
+main button {/*Estilização dos botões direita/esquerda*/
+    position: absolute;
+    padding: 10px;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    top: 50%;
+    transform: translateY(-50%);
+    
+    border: none;
+    
+    z-index: 1000;
+
+    cursor: pointer;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+/*--------FIM DA ESTILIZAÇÃO CARROUSEL-------*/
+
+/*ESTILIZAÇÃO SECTION*/
+section {
+    padding: 10px;
+    margin: 20px;
+    height: auto;
+
+    display: flex;
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+}
+
+.section-title {
+    flex: 1;
+
+    min-width: 50%;
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-family: var(--fonte-titulo);
+    color: var(--cor2);
+}
+
+.section-text {
+    padding-right: 5px;
+    padding-left: 5px;
+
+    max-width: 600px;
+
+    font-size: 1.5em;
+    line-height: 2em;
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--cor3);
+    font-family: var(--fonte-titulo);
+}
+
+.section-button li {
+    list-style: none;
+}
+
+.section-button a {
+    color: var(--cor3);
+    font-weight: bolder;
+    text-decoration: none;
+
+    font-size: 1.2em;
+    line-height: 2em;
+}
+
+.section-button a:hover {
+    color: var(--cor2);
+    transition-duration: 4.s;
+}
+
+.section-figure img {
+    max-width: 100%;
+    height: auto;
+
+    display: block;
+    margin-top: 20px;
+}
+/*--------FIM DA ESTILIZAÇÃO SECTION-------*/
+
+/*ARTICLE*/
+.article-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-around; /* Move o conteúdo para a direita */
+    height: auto;
+    
+    gap: 20px; /* Espaçamento entre a imagem e o texto */
+    flex-wrap: wrap;
+}
+
+.article-figure img{
+    max-width: 100%; 
+    height: auto;
+
+    display: block;
+    margin: auto;
+}
+
+.article-content {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.article-title {
+    min-width: 50%;
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-family: var(--fonte-titulo);
+    color: var(--cor2);
+}
+
+.article-text {
+    padding-right: 5px;
+    padding-left: 5px;
+
+    max-width: 600px;
+
+    font-size: 1.5em;
+    line-height: 2em;
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--cor3);
+    font-family: var(--fonte-titulo);
+}
+
+/*--------FIM DA ESTILIZAÇÃO ARTICLE-------*/
+
+/*CONTAINER DE SUPORTE*/
+.suporte-title {
+    display: block;
+    text-align: center;
+
+    font-family: var(--fonte-titulo);
+    color: var(--cor2);
+}
+
+.suporte-container {
+    display: flex;/*Alinhar elementos*/
+    justify-content: space-evenly;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.suporte-content {
+    position:relative;
+
+    padding: 10px;
+    margin: 5px;
+    
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+#mapa, .suporte {
+    width: 400px;
+    height: 400px;
+}
+
+iframe {
+    width: 100%;
+    height: 85%;
+
+    text-align: center;
+}
+
+.suporte p {
+    font-size: 1.1em;
+    line-height: 2em;
+}
+
+
+.suporte-container a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+/*BOTÕES*/
+.wpp a:hover {
+    color: green;  
+}
+
+.email a:hover {
+    color: red;
+}
+
+#instagram a:hover {
+    background: linear-gradient(magenta, red, blue); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+}
+
+#facebook a:hover {
+    color: var(--cor4);
+}
+
+/*--------FIM DA ESTILIZAÇÃO SUPORTE-------*/
+
+/*RODAPÉ*/
+
+footer {
+    color: var(--cor9);
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+    padding: 10px;
+}
+
+.footer-top p {
+    margin-bottom: 10px;
+    font-family: var(--fonte-frase);
+    font-size: 20px;
+}
+  
+.footer-banner {
+    width: 150px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content:space-around;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+  
+.footer-links div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+  
+.footer-links a {
+    color:var(--cor9);
+    margin: 5px 0;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+.footer-links a:hover {
+    text-decoration: underline;
+}
+  
+.footer-bottom  p {
+    margin: 20px;
+    font-size: 16px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+}
+  
+.linha {
+    width: 100%;
+    height: 2px; 
+    background-color: rgba(0, 0, 0, 0.114); 
+    margin: 20px 0; 
+    border-radius: 5%;
+}
+
+  
