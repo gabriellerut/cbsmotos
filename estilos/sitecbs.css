@@ -59,6 +59,7 @@ header {
 .container-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logo-cbs {
@@ -68,7 +69,7 @@ header {
 
 .title-header {/*CBS MOTOS*/
     font-family: var(--fonte-titulo);
-    font-size: 1.8em;
+    font-size: 2em;
 }
 
 .text-header {/*Realizando Sonhos*/
