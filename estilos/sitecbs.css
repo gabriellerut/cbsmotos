@@ -136,11 +136,15 @@ header menu {
 .button-login a {
     color: var(--cor3);
     text-decoration: none;
+
 }
 
 .button-login a:hover {
     color: var(--cor2);
     transition-duration: .4s;
+}
+a:visited {
+    text-decoration: none;
 }
 
 .button-menu {
