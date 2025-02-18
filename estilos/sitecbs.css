@@ -134,7 +134,12 @@ header menu {
     border-radius: 60px;
 }
 
-.button-login:hover {
+.button-login a {
+    color: var(--cor3);
+    text-decoration: none;
+}
+
+.button-login a:hover {
     color: var(--cor2);
     transition-duration: .4s;
 }
